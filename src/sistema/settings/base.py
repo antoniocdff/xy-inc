@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 
     # 3rd party apps
+    'mutant',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
