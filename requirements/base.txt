@@ -1,0 +1,5 @@
+Django==1.10.3
+psycopg2
+djangorestframework
+djangorestframework-filters
+django-rest-swagger

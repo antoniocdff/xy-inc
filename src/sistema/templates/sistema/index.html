@@ -1,0 +1,25 @@
+{% extends "basehotsite.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+    <div class="st-container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class='alert {% if message.tags %} alert-{{ message.tags }}{% endif %}' role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="st-pusher" id="content">
+            <div class="st-content">
+                <div class="st-content-inner">
+                    <h1>Hello World!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

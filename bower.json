@@ -1,0 +1,23 @@
+{
+  "name": "xyinc",
+  "authors": [
+    "Antônio Carlos Dias <antoniocarlosdff@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "GNU",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "bootstrap#v4.0.0-alpha.6",
+    "font-awesome": "fontawesome#^4.7.0",
+  }
+}
