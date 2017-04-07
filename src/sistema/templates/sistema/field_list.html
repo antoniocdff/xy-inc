@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n inspector %}
+{% block content %}
+    {% block table_info %}
+        <div>
+            <span>{% trans "Modelo" %}: {{ parent_table_name }}</span>
+        </div>
+    {% endblock table_info %}
+    {% block field_list %}
+        <table>
+            <tr>
+                <th>{% trans "Nome do Campo" %}</th>
+                <th>{% trans "Tipo" %}</th>
+                <th>{% trans "Null?" %}</th>
+                <th>{% trans "Blank?" %}</th>
+                <th>{% trans "Primary key?" %}</th>
+                <th>{% trans "Unique?" %}</th>
+                <th>{% trans "Ações" %}</th>
+            </tr>
+            {% for field in field_list %}
+                <tr>
+                    <td>{{ field.name }}</td>
+                    <td>{{ field|get_field_type }}</td>
+                    <td>{{ field.null }}</td>
+                    <td>{{ field.blank }}</td>
+                    <td>{{ field.primary_key }}</td>
+                    <td>{{ field.unique }}</td>
+                    <td>
+                        <a href="{% url 'excluir_campo' parent_table_id field.pk %}">{% trans "Excluir" %}</a>
+                        <a href="{% url 'editar_campo' parent_table_id field.pk %}">{% trans "Editar" %}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock field_list %}
+    {% block table_controls %}
+        <div>
+            <form action="{% url 'criar_campo' parent_table_id %}" method="get">
+                {{ field_type_form.as_p }}
+                <input type="submit" value="{% trans 'Adicionar' %}" />
+            </form>
+            <a href="{% url 'listar_modelos' %}">{% trans "Voltar" %}</a>
+        </div>
+    {% endblock table_controls %}
+{% endblock content %}

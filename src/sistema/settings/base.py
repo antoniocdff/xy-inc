@@ -16,6 +16,13 @@ INSTALLED_APPS = (
 
     # 3rd party apps
     'mutant',
+    'mutant.contrib.boolean',
+    'mutant.contrib.temporal',
+    'mutant.contrib.file',
+    'mutant.contrib.numeric',
+    'mutant.contrib.text',
+    'mutant.contrib.web',
+    'mutant.contrib.related',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
